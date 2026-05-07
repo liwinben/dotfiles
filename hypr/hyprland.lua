@@ -1,1 +1,2 @@
 require("keybinds")
+require("monitors")
