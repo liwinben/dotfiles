@@ -35,3 +35,14 @@ hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("brave"))
 hl.bind("SUPER + D", hl.dsp.exec_cmd("webcord"))
 hl.bind("SUPER + S", hl.dsp.exec_cmd("steam"))
+hl.bind("SUPER + M", hl.dsp.exec_cmd("jellyfin-desktop"))
+hl.bind("SUPER + F", hl.dsp.exec_cmd("kitty -e yazi"))
+
+--volume
+hl.bind("SUPER + CTRL + V + U", hl.dsp.exec_cmd("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"), { repeat_key = true, locked = true })
+hl.bind("SUPER + CTRL + V + D", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeat_key = true, locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { repeat_key = true, locked = true })
+
+--brightness
+hl.bind("SUPER + CTRL + B + U", hl.dsp.exec_cmd("brightnessctl set 5%+"), {locked = true, repeating = true})
+hl.bind("SUPER + CTRL + B + D", hl.dsp.exec_cmd("brightnessctl set 5%-"), {locker = true, repeating = true})
