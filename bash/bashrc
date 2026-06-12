@@ -1,0 +1,21 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+
+hyprupdate() {
+	cd /home/liwin/server/ && git pull
+} # pulls server git repo
+
+eval "$(fzf --bash)"
+
+serverupdate() {
+	cd /home/liwin/server/ && git push && ssh proxmox "cd /data/server/ && git pull"
+}
